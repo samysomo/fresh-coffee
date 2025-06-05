@@ -14,7 +14,7 @@ async function getProduct(id: number) {
   return res
 }
 
-const EditProductPage = async ({params} : {params : {id: string}}) => {
+const EditProductPage = async ({params} : {params : Promise<{id: string}>}) => {
   const paramsId = await params
   const id = paramsId.id
   const product = await getProduct(+id)
