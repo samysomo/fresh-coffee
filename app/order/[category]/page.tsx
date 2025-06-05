@@ -14,7 +14,7 @@ async function getProductsByCategory(category: string) {
   return products
 }
 
-const CategoryPage = async ({params} : {params : {category : string}}) => {
+const CategoryPage = async ({params} : {params : Promise<{category : string}>}) => {
   const {category} = await params
 
   const products = await getProductsByCategory(category)

@@ -17,7 +17,7 @@ const searchProducts = async (search: string) => {
     return products
 }
 
-const SearchPage = async ({searchParams} : {searchParams: {search: string}}) => {
+const SearchPage = async ({searchParams} : {searchParams: Promise<{search: string}>}) => {
     const params = await searchParams
     const search = params.search || ''
     const products = await searchProducts(search)

@@ -10,7 +10,7 @@ import React from 'react'
 
 
 
-const ProductsPage = async ({searchParams} : {searchParams : {page: string}}) => {
+const ProductsPage = async ({searchParams} : {searchParams : Promise<{page: string}>}) => {
   const params = await searchParams
   const page = +params.page || 1
   const pageSize = 10
